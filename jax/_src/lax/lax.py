@@ -6475,6 +6475,7 @@ def omnistaging_disabler() -> None:
   batching.primitive_batchers[tie_in_p] = _tie_in_batch_rule
   masking.masking_rules[tie_in_p] = lambda vals, logical_shapes: vals[1]
 
-@jax.partial(jit, statis_argnums=(1,2,))
+
+@jax.partial(jax.jit, static_argnums=(1, 2,))
 def swapaxes(input, axis_a, axis_b):
-    return jnp.swapaxes(input, axis_a, axis_b)
+  return jnp.swapaxes(input, axis_a, axis_b)
