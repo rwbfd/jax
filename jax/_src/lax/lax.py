@@ -53,6 +53,7 @@ from jax.tree_util import tree_map
 from jax.lib import pytree
 from jax.lib import xla_bridge
 from jax.lib import xla_client
+import jax.numpy as jnp
 
 xb = xla_bridge
 xc = xla_client
